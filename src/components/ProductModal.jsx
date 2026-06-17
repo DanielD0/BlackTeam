@@ -141,7 +141,7 @@ export default function ProductModal({ product, onClose, onAddToCart }) {
         </button>
 
         {/* Left Area: Dynamic Visualizer (7 Columns on large screens) */}
-        <div className="md:col-span-7 bg-slate-100 dark:bg-slate-950 flex flex-col relative justify-center items-center p-6 border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800 min-h-[450px] md:min-h-[600px]">
+        <div className="md:col-span-7 bg-slate-100 dark:bg-slate-950 flex flex-col relative justify-center items-center p-4 border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800 h-[320px] sm:h-[420px] md:h-auto md:min-h-[600px]">
           <div className="absolute inset-0 scanlines opacity-10 pointer-events-none" />
 
           {/* Technical Corner Elements */}
@@ -169,7 +169,7 @@ export default function ProductModal({ product, onClose, onAddToCart }) {
                 transform: isZoomed ? 'scale(2.2)' : 'scale(1)',
                 transformOrigin: `${zoomPos.x}% ${zoomPos.y}%`
               }}
-              className="max-h-[75vh] md:max-h-[500px] max-w-[85%] object-contain transition-transform duration-100 ease-out"
+              className="max-h-[90%] max-w-[90%] object-contain transition-transform duration-100 ease-out"
             />
           </div>
 
