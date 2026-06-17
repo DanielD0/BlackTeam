@@ -9,50 +9,50 @@ export default function CartDrawer({ isOpen, onClose, cart, onRemoveItem, onChec
   const getThumbnail = (id, color, gender) => {
     const isWhite = color === 'Pure White';
     if (id === 'playera_asimetrica_m') {
-      return isWhite ? '/assets/white_asym_front.png' : '/assets/black_asym_front.png';
+      return isWhite ? 'assets/white_asym_front.png' : 'assets/black_asym_front.png';
     }
     if (id === 'playera_asimetrica_corta_m') {
-      return isWhite ? '/assets/white_asym_short_front.png' : '/assets/black_asym_short_front.png';
+      return isWhite ? 'assets/white_asym_short_front.png' : 'assets/black_asym_short_front.png';
     }
     if (id === 'playera_manga_corta_m') {
-      return isWhite ? '/assets/white_short_front.png' : '/assets/black_short_front.png';
+      return isWhite ? 'assets/white_short_front.png' : 'assets/black_short_front.png';
     }
     if (id === 'playera_sin_manga_m') {
-      return isWhite ? '/assets/white_tank_front.png' : '/assets/black_tank_front.png';
+      return isWhite ? 'assets/white_tank_front.png' : 'assets/black_tank_front.png';
     }
     if (id === 'licra_compresion_m') {
-      return isWhite ? '/assets/white_tights_front.png' : '/assets/black_tights_front.png';
+      return isWhite ? 'assets/white_tights_front.png' : 'assets/black_tights_front.png';
     }
     if (id === 'licra_asimetrica_m') {
-      return isWhite ? '/assets/white_asym_tights_front.png' : '/assets/black_asym_tights_front.png';
+      return isWhite ? 'assets/white_asym_tights_front.png' : 'assets/black_asym_tights_front.png';
     }
     if (id === 'shorts_compresion_m') {
-      return isWhite ? '/assets/white_shorts_front.png' : '/assets/black_shorts_front.png';
+      return isWhite ? 'assets/white_shorts_front.png' : 'assets/black_shorts_front.png';
     }
     if (id === 'playera_manga_larga_f') {
-      return isWhite ? '/assets/white_female_shirt_front.png' : '/assets/black_female_shirt_front.png';
+      return isWhite ? 'assets/white_female_shirt_front.png' : 'assets/black_female_shirt_front.png';
     }
     if (id === 'playera_asimetrica_f') {
-      return isWhite ? '/assets/white_female_asym_front.png' : '/assets/black_female_asym_front.png';
+      return isWhite ? 'assets/white_female_asym_front.png' : 'assets/black_female_asym_front.png';
     }
     if (id === 'playera_manga_corta_f') {
-      return isWhite ? '/assets/white_female_short_front.png' : '/assets/black_female_short_front.png';
+      return isWhite ? 'assets/white_female_short_front.png' : 'assets/black_female_short_front.png';
     }
     if (id === 'playera_asimetrica_corta_f') {
-      return isWhite ? '/assets/white_female_asym_short_front.png' : '/assets/black_female_asym_short_front.png';
+      return isWhite ? 'assets/white_female_asym_short_front.png' : 'assets/black_female_asym_short_front.png';
     }
     if (id === 'licra_compresion_f') {
-      return isWhite ? '/assets/white_female_tights_front.png' : '/assets/black_female_tights_front.png';
+      return isWhite ? 'assets/white_female_tights_front.png' : 'assets/black_female_tights_front.png';
     }
     if (id === 'licra_asimetrica_f') {
-      return isWhite ? '/assets/white_female_asym_tights_front.png' : '/assets/black_female_asym_tights_front.png';
+      return isWhite ? 'assets/white_female_asym_tights_front.png' : 'assets/black_female_asym_tights_front.png';
     }
     if (id === 'shorts_compresion_f') {
-      return isWhite ? '/assets/white_female_shorts_front.png' : '/assets/black_female_shorts_front.png';
+      return isWhite ? 'assets/white_female_shorts_front.png' : 'assets/black_female_shorts_front.png';
     }
     return gender === 'Hombre'
-      ? (isWhite ? '/assets/white_shirt_front.png' : '/assets/black_shirt_front.png')
-      : (isWhite ? '/assets/white_shirt_front.png' : '/assets/black_shirt_front.png');
+      ? (isWhite ? 'assets/white_shirt_front.png' : 'assets/black_shirt_front.png')
+      : (isWhite ? 'assets/white_shirt_front.png' : 'assets/black_shirt_front.png');
   };
 
   return (

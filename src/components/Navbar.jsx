@@ -7,7 +7,7 @@ export default function Navbar({ activeTab, setActiveTab, isDarkMode, toggleThem
       {/* Brand logo */}
       <div className="flex items-center gap-2 cursor-pointer shrink-0" onClick={() => setActiveTab('home')}>
         <img 
-          src={isDarkMode ? '/assets/logo_white.png' : '/assets/logo_black.png'} 
+          src={isDarkMode ? 'assets/logo_white.png' : 'assets/logo_black.png'} 
           alt="Black Team Logo" 
           className="h-7 sm:h-10 w-auto object-contain"
           style={{ mixBlendMode: isDarkMode ? 'screen' : 'multiply' }}

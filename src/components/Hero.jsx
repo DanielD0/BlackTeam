@@ -19,7 +19,7 @@ export default function Hero({ setActiveTab }) {
 
         <div className="w-full max-w-[280px] sm:max-w-[340px] md:max-w-[420px] transition-all duration-300 dark:invert">
           <img 
-            src="/assets/rendimiento.svg" 
+            src="assets/rendimiento.svg" 
             alt="BT Athletics Logo" 
             className="w-full h-auto object-contain"
           />
