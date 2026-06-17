@@ -169,7 +169,7 @@ export default function ProductModal({ product, onClose, onAddToCart }) {
             }}
           >
             <img 
-              src={activeMockup.front} 
+              src={`${activeMockup.front}?v=2`} 
               alt="Mockup"
               style={{ 
                 filter: `drop-shadow(0 15px 35px rgba(0, 0, 0, 0.9)) ${activeMockup.filter}`,
