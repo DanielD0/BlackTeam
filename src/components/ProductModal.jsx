@@ -128,9 +128,9 @@ export default function ProductModal({ product, onClose, onAddToCart }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-opacity">
+    <div className="fixed inset-0 z-50 overflow-y-auto flex items-start md:items-center justify-center p-2 sm:p-4 bg-black/80 backdrop-blur-md transition-opacity">
       {/* Modal Card */}
-      <div className="relative w-full max-w-5xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:grid md:grid-columns md:grid-cols-12 min-h-[85vh] md:min-h-0">
+      <div className="relative w-full max-w-5xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:grid md:grid-columns md:grid-cols-12 min-h-[85vh] md:min-h-0 my-auto">
         
         {/* Close Button */}
         <button 
