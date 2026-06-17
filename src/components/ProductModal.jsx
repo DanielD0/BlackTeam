@@ -177,7 +177,7 @@ export default function ProductModal({ product, onClose, onAddToCart }) {
                 transform: isZoomed ? 'scale(2.2)' : 'scale(1)',
                 transformOrigin: `${zoomPos.x}% ${zoomPos.y}%`
               }}
-              className="max-h-[90%] max-w-[90%] object-contain transition-transform duration-100 ease-out"
+              className="max-h-[70%] max-w-[80%] object-contain transition-transform duration-100 ease-out"
             />
           </div>
 
