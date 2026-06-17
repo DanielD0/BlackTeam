@@ -152,13 +152,21 @@ export default function ProductModal({ product, onClose, onAddToCart }) {
 
           {/* Render Photorealistic Image with Hover Zoom */}
           <div 
-            className="w-full h-full flex items-center justify-center relative overflow-hidden cursor-zoom-in"
-            onMouseEnter={() => setIsZoomed(true)}
+            className="w-full h-full flex items-center justify-center relative overflow-hidden md:cursor-zoom-in"
+            onMouseEnter={() => {
+              if (window.matchMedia('(hover: hover)').matches) {
+                setIsZoomed(true);
+              }
+            }}
             onMouseLeave={() => {
               setIsZoomed(false);
               setZoomPos({ x: 50, y: 50 });
             }}
-            onMouseMove={handleMouseMove}
+            onMouseMove={(e) => {
+              if (window.matchMedia('(hover: hover)').matches) {
+                handleMouseMove(e);
+              }
+            }}
           >
             <img 
               src={activeMockup.front} 
