@@ -57,7 +57,7 @@ export default function App() {
     setCart(prev => prev.filter((_, i) => i !== index));
   };
 
-  const handleCheckout = async () => {
+  const handleCheckout = async (customerData) => {
     setCheckoutStatus('loading');
     
     // Si la URL es por defecto, hacemos simulación exitosa de pedido
@@ -76,7 +76,7 @@ export default function App() {
         headers: {
           'Content-Type': 'text/plain'
         },
-        body: JSON.stringify({ items: cart })
+        body: JSON.stringify({ items: cart, customer: customerData })
       });
       const data = await response.json();
       if (data.status === 'success') {

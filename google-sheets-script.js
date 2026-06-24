@@ -30,9 +30,27 @@ function doPost(e) {
     var data = JSON.parse(e.postData.contents);
     var items = data.items; // Arreglo de prendas compradas
     
+    var customer = data.customer || {};
+    var name = customer.name || "N/A";
+    var phone = customer.phone || "N/A";
+    var address = customer.address || "N/A";
+    var dateStr = new Date().toLocaleString("es-MX", { timeZone: "America/Mexico_City" });
+    
     // Crear cabecera si la hoja de cálculo está vacía
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(["ID Pedido", "ID Prenda", "Descripción de Prenda", "Color", "Talla", "Cantidad", "Estatus"]);
+      sheet.appendRow([
+        "ID Pedido", 
+        "Fecha Solicitud", 
+        "Nombre Cliente", 
+        "Teléfono / WhatsApp", 
+        "Dirección", 
+        "ID Prenda", 
+        "Descripción de Prenda", 
+        "Color", 
+        "Talla", 
+        "Cantidad", 
+        "Estatus"
+      ]);
     }
     
     var orderId = "PED-" + new Date().getTime();
@@ -46,6 +64,10 @@ function doPost(e) {
       for (var j = 0; j < qty; j++) {
         sheet.appendRow([
           orderId,
+          dateStr,
+          name,
+          phone,
+          address,
           item.id,
           item.name,
           item.color,
