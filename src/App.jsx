@@ -7,7 +7,7 @@ import CartDrawer from './components/CartDrawer';
 import { CheckCircle, MessageSquare, Calendar, ShieldCheck, X } from 'lucide-react';
 
 // Configura aquí tu URL de Google Apps Script Web App (ejemplo: https://script.google.com/macros/s/.../exec)
-const GOOGLE_SHEETS_WEBHOOK_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEBAPP_URL_HERE";
+const GOOGLE_SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxMDiTIb5dbRgWjmR8wgzOWpvzDvkLMMHdKiMF60dnwhWh9cd-UMEFLBGJ58DIDX4_2/exec";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -59,7 +59,7 @@ export default function App() {
 
   const handleCheckout = async (customerData) => {
     setCheckoutStatus('loading');
-    
+
     // Si la URL es por defecto, hacemos simulación exitosa de pedido
     if (!GOOGLE_SHEETS_WEBHOOK_URL || GOOGLE_SHEETS_WEBHOOK_URL.includes("YOUR_GOOGLE_APPS_SCRIPT_WEBAPP_URL_HERE")) {
       setTimeout(() => {
@@ -102,19 +102,18 @@ export default function App() {
   }, [showToast]);
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${
-      isDarkMode ? 'bg-black text-slate-100' : 'bg-white text-slate-900'
-    }`}>
+    <div className={`min-h-screen transition-colors duration-300 ${isDarkMode ? 'bg-black text-slate-100' : 'bg-white text-slate-900'
+      }`}>
       {/* HUD Scanlines overlay */}
       <div className="absolute inset-0 scanlines opacity-5 pointer-events-none z-45" />
 
       {/* Main Header / Navigation */}
-      <Navbar 
-        activeTab={activeTab} 
-        setActiveTab={setActiveTab} 
-        isDarkMode={isDarkMode} 
-        toggleTheme={toggleTheme} 
-        cartCount={cart.reduce((sum, item) => sum + item.quantity, 0)} 
+      <Navbar
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        isDarkMode={isDarkMode}
+        toggleTheme={toggleTheme}
+        cartCount={cart.reduce((sum, item) => sum + item.quantity, 0)}
         onOpenCart={() => setIsCartOpen(true)}
       />
 
@@ -123,24 +122,24 @@ export default function App() {
         {activeTab === 'home' && (
           <Hero setActiveTab={setActiveTab} />
         )}
-        
+
         {activeTab === 'collections' && (
-          <Collections 
-            initialCollection={null} 
-            onSelectProduct={setSelectedProduct} 
+          <Collections
+            initialCollection={null}
+            onSelectProduct={setSelectedProduct}
           />
         )}
 
         {activeTab === 'blackskin' && (
-          <Collections 
-            initialCollection="blackskin" 
-            onSelectProduct={setSelectedProduct} 
+          <Collections
+            initialCollection="blackskin"
+            onSelectProduct={setSelectedProduct}
           />
         )}
       </main>
 
       {/* Drawer del Carrito */}
-      <CartDrawer 
+      <CartDrawer
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
         cart={cart}
@@ -153,9 +152,9 @@ export default function App() {
       {checkoutStatus === 'success' && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
           <div className="relative w-full max-w-md bg-white dark:bg-slate-900 border border-slate-250 dark:border-slate-800 rounded-2xl p-6 shadow-2xl text-center flex flex-col gap-6">
-            
+
             {/* Close button */}
-            <button 
+            <button
               onClick={() => setCheckoutStatus(null)}
               className="absolute top-4 right-4 p-1.5 rounded-full hover:bg-slate-150 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400 transition-all cursor-pointer"
             >
@@ -225,7 +224,7 @@ export default function App() {
             </div>
 
             {/* Action Button */}
-            <button 
+            <button
               onClick={() => setCheckoutStatus(null)}
               className="w-full py-3.5 bg-black dark:bg-white text-white dark:text-black font-heading font-extrabold text-xs tracking-widest rounded-xl hover:bg-neutral-850 dark:hover:bg-neutral-150 transition-all cursor-pointer shadow-lg"
             >
@@ -238,19 +237,18 @@ export default function App() {
 
       {/* Detailed Product Customizer Modal */}
       {selectedProduct && (
-        <ProductModal 
-          product={selectedProduct} 
-          onClose={() => setSelectedProduct(null)} 
+        <ProductModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
           onAddToCart={handleAddToCart}
         />
       )}
 
       {/* Success Notification Toast */}
-      <div className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-6 py-3 bg-white text-slate-950 font-bold tracking-wider rounded-lg shadow-lg transition-all duration-300 border border-slate-200 flex items-center gap-2 ${
-        showToast 
-          ? 'opacity-100 translate-y-0 scale-100' 
+      <div className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-6 py-3 bg-white text-slate-950 font-bold tracking-wider rounded-lg shadow-lg transition-all duration-300 border border-slate-200 flex items-center gap-2 ${showToast
+          ? 'opacity-100 translate-y-0 scale-100'
           : 'opacity-0 translate-y-4 scale-95 pointer-events-none'
-      }`}>
+        }`}>
         <span>PRODUCTO AÑADIDO AL CARRITO</span>
         <span className="w-1.5 h-1.5 rounded-full bg-slate-950 animate-ping" />
       </div>
