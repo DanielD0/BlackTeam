@@ -66,6 +66,7 @@ export default function App() {
         setOrderInfo({ status: "success", orderId: "PED-" + new Date().getTime() });
         setCheckoutStatus('success');
         setCart([]);
+        setIsCartOpen(false); // Cerrar el carrito
       }, 1500);
       return;
     }
@@ -83,6 +84,7 @@ export default function App() {
         setOrderInfo(data);
         setCheckoutStatus('success');
         setCart([]);
+        setIsCartOpen(false); // Cerrar el carrito
       } else {
         setCheckoutStatus('error');
       }

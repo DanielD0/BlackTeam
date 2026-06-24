@@ -8,6 +8,16 @@ export default function CartDrawer({ isOpen, onClose, cart, onRemoveItem, onChec
   const [address, setAddress] = useState('');
   const [errors, setErrors] = useState({});
 
+  React.useEffect(() => {
+    if (!isOpen) {
+      setShowForm(false);
+      setName('');
+      setPhone('');
+      setAddress('');
+      setErrors({});
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
