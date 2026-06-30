@@ -8,6 +8,8 @@ import { CheckCircle, MessageSquare, Calendar, ShieldCheck, X } from 'lucide-rea
 
 // Configura aquí tu URL de Google Apps Script Web App (ejemplo: https://script.google.com/macros/s/.../exec)
 const GOOGLE_SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxMDiTIb5dbRgWjmR8wgzOWpvzDvkLMMHdKiMF60dnwhWh9cd-UMEFLBGJ58DIDX4_2/exec";
+// Reemplaza con tu número de WhatsApp real (con código de país, ej. 52 para México + 10 dígitos, sin espacios ni símbolos +)
+const SELLER_WHATSAPP_NUMBER = "525512345678"; 
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -60,10 +62,19 @@ export default function App() {
   const handleCheckout = async (customerData) => {
     setCheckoutStatus('loading');
 
+    // Helper para generar el texto de WhatsApp
+    const buildWhatsAppLink = (orderId) => {
+      const itemsText = cart.map(item => `- ${item.name} (${item.color}, Talla ${item.size})`).join('\n');
+      const text = `Hola BT Athletics, acabo de registrar un pedido en la web.\n\n*ID de Pedido:* ${orderId}\n*Cliente:* ${customerData.name}\n*Teléfono:* ${customerData.phone}\n*Dirección:* ${customerData.address}\n\n*Prendas:* \n${itemsText}\n\nQuedo a la espera de la confirmación. ¡Muchas gracias!`;
+      return `https://wa.me/${SELLER_WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    };
+
     // Si la URL es por defecto, hacemos simulación exitosa de pedido
     if (!GOOGLE_SHEETS_WEBHOOK_URL || GOOGLE_SHEETS_WEBHOOK_URL.includes("YOUR_GOOGLE_APPS_SCRIPT_WEBAPP_URL_HERE")) {
       setTimeout(() => {
-        setOrderInfo({ status: "success", orderId: "PED-" + new Date().getTime() });
+        const orderId = "PED-" + new Date().getTime();
+        const waLink = buildWhatsAppLink(orderId);
+        setOrderInfo({ status: "success", orderId, whatsAppLink: waLink });
         setCheckoutStatus('success');
         setCart([]);
         setIsCartOpen(false); // Cerrar el carrito
@@ -81,7 +92,8 @@ export default function App() {
       });
       const data = await response.json();
       if (data.status === 'success') {
-        setOrderInfo(data);
+        const waLink = buildWhatsAppLink(data.orderId);
+        setOrderInfo({ ...data, whatsAppLink: waLink });
         setCheckoutStatus('success');
         setCart([]);
         setIsCartOpen(false); // Cerrar el carrito
@@ -225,13 +237,27 @@ export default function App() {
               </div>
             </div>
 
-            {/* Action Button */}
-            <button
-              onClick={() => setCheckoutStatus(null)}
-              className="w-full py-3.5 bg-black dark:bg-white text-white dark:text-black font-heading font-extrabold text-xs tracking-widest rounded-xl hover:bg-neutral-850 dark:hover:bg-neutral-150 transition-all cursor-pointer shadow-lg"
-            >
-              ENTENDIDO Y CERRAR
-            </button>
+            {/* Botones de acción */}
+            <div className="flex flex-col gap-3">
+              {orderInfo?.whatsAppLink && (
+                <a
+                  href={orderInfo.whatsAppLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3.5 bg-emerald-600 dark:bg-emerald-500 hover:bg-emerald-700 dark:hover:bg-emerald-600 text-white font-heading font-extrabold text-xs tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:-translate-y-0.5"
+                >
+                  <MessageSquare size={16} className="fill-white/10" />
+                  ENVIAR CONFIRMACIÓN POR WHATSAPP
+                </a>
+              )}
+              
+              <button
+                onClick={() => setCheckoutStatus(null)}
+                className="w-full py-3 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-750 text-slate-800 dark:text-slate-200 border border-slate-350 dark:border-slate-700/60 font-heading font-bold text-xs tracking-widest rounded-xl transition-all cursor-pointer"
+              >
+                CERRAR VENTANA
+              </button>
+            </div>
 
           </div>
         </div>

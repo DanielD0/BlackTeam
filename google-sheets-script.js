@@ -78,6 +78,39 @@ function doPost(e) {
       }
     }
     
+    // Enviar correo de notificación al administrador
+    try {
+      var adminEmail = Session.getEffectiveUser().getEmail();
+      if (adminEmail) {
+        var itemsDetails = "";
+        for (var i = 0; i < items.length; i++) {
+          var it = items[i];
+          itemsDetails += "- " + it.name + " (" + it.color + ", Talla " + it.size + ") x" + (it.quantity || 1) + "<br>";
+        }
+        
+        var htmlBody = 
+          "<h2>¡Nuevo Pedido Recibido!</h2>" +
+          "<p><b>ID del Pedido:</b> " + orderId + "</p>" +
+          "<p><b>Fecha de Solicitud:</b> " + dateStr + "</p>" +
+          "<p><b>Cliente:</b> " + name + "</p>" +
+          "<p><b>Teléfono / WhatsApp:</b> <a href='https://wa.me/52" + phone + "'>" + phone + "</a></p>" +
+          "<p><b>Dirección de Entrega:</b> " + address + "</p>" +
+          "<br>" +
+          "<h3>Detalle del Pedido:</h3>" +
+          "<p style='font-family: monospace; font-size: 14px;'>" + itemsDetails + "</p>" +
+          "<br>" +
+          "<p style='color: #666; font-size: 11px;'>Este es un mensaje automático de tu sistema de Apps Script.</p>";
+          
+        MailApp.sendEmail({
+          to: adminEmail,
+          subject: "NUEVO PEDIDO RECIBIDO // ID: " + orderId,
+          htmlBody: htmlBody
+        });
+      }
+    } catch (emailErr) {
+      console.error("Error enviando email: " + emailErr.toString());
+    }
+    
     return ContentService.createTextOutput(JSON.stringify({ "status": "success", "orderId": orderId }))
       .setMimeType(ContentService.MimeType.JSON);
       
