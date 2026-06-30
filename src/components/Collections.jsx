@@ -214,7 +214,7 @@ export default function Collections({ initialCollection = null, onSelectProduct 
             Colección BlackSkin
           </h2>
           <p className="text-slate-650 dark:text-slate-400 text-sm mt-3 font-light leading-relaxed">
-            BlackSkin es nuestra línea insignia de licras de alto rendimiento. Tejidos ultra elásticos y transpirables que se sienten como una segunda piel (Second Skin). Diseñados para proteger y potenciar cada movimiento muscular.
+            BlackSkin es nuestra línea insignia de licras de alto rendimiento. Tejidos ultra elásticos y transpirables que se sienten como una segunda piel. Diseñados para proteger y potenciar cada movimiento muscular.
           </p>
         </div>
         <div className="px-5 py-4 bg-slate-100 dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800 min-w-[200px] text-left">
