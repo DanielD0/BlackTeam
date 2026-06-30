@@ -9,7 +9,7 @@ import { CheckCircle, MessageSquare, Calendar, ShieldCheck, X } from 'lucide-rea
 // Configura aquí tu URL de Google Apps Script Web App (ejemplo: https://script.google.com/macros/s/.../exec)
 const GOOGLE_SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxMDiTIb5dbRgWjmR8wgzOWpvzDvkLMMHdKiMF60dnwhWh9cd-UMEFLBGJ58DIDX4_2/exec";
 // Reemplaza con tu número de WhatsApp real (con código de país, ej. 52 para México + 10 dígitos, sin espacios ni símbolos +)
-const SELLER_WHATSAPP_NUMBER = "525512345678"; 
+const SELLER_WHATSAPP_NUMBER = "525512405971";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -250,7 +250,7 @@ export default function App() {
                   ENVIAR CONFIRMACIÓN POR WHATSAPP
                 </a>
               )}
-              
+
               <button
                 onClick={() => setCheckoutStatus(null)}
                 className="w-full py-3 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-750 text-slate-800 dark:text-slate-200 border border-slate-350 dark:border-slate-700/60 font-heading font-bold text-xs tracking-widest rounded-xl transition-all cursor-pointer"
@@ -274,8 +274,8 @@ export default function App() {
 
       {/* Success Notification Toast */}
       <div className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-6 py-3 bg-white text-slate-950 font-bold tracking-wider rounded-lg shadow-lg transition-all duration-300 border border-slate-200 flex items-center gap-2 ${showToast
-          ? 'opacity-100 translate-y-0 scale-100'
-          : 'opacity-0 translate-y-4 scale-95 pointer-events-none'
+        ? 'opacity-100 translate-y-0 scale-100'
+        : 'opacity-0 translate-y-4 scale-95 pointer-events-none'
         }`}>
         <span>PRODUCTO AÑADIDO AL CARRITO</span>
         <span className="w-1.5 h-1.5 rounded-full bg-slate-950 animate-ping" />
