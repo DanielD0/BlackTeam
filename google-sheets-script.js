@@ -36,6 +36,12 @@ function doPost(e) {
     var address = customer.address || "N/A";
     var dateStr = new Date().toLocaleString("es-MX", { timeZone: "America/Mexico_City" });
     
+    // Calcular el monto total del pedido
+    var totalPedido = 0;
+    for (var k = 0; k < items.length; k++) {
+      totalPedido += Number(items[k].price || 0);
+    }
+
     // Crear cabecera si la hoja de cálculo está vacía
     if (sheet.getLastRow() === 0) {
       sheet.appendRow([
@@ -48,7 +54,9 @@ function doPost(e) {
         "Descripción de Prenda", 
         "Color", 
         "Talla", 
+        "Precio Unitario",
         "Cantidad", 
+        "Total Pedido",
         "Estatus"
       ]);
     }
@@ -72,7 +80,9 @@ function doPost(e) {
           item.name,
           item.color,
           item.size,
+          item.price, // Precio Unitario
           1, // 1 unidad por fila
+          totalPedido, // Total completo del pedido
           "Solicitado"
         ]);
       }
@@ -98,6 +108,7 @@ function doPost(e) {
           "<br>" +
           "<h3>Detalle del Pedido:</h3>" +
           "<p style='font-family: monospace; font-size: 14px;'>" + itemsDetails + "</p>" +
+          "<p style='font-size: 16px; font-weight: bold;'>Monto Total del Pedido: $" + totalPedido + " MXN</p>" +
           "<br>" +
           "<p style='color: #666; font-size: 11px;'>Este es un mensaje automático de tu sistema de Apps Script.</p>";
           

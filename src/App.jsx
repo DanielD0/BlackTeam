@@ -65,7 +65,8 @@ export default function App() {
     // Helper para generar el texto de WhatsApp
     const buildWhatsAppLink = (orderId) => {
       const itemsText = cart.map(item => `- ${item.name} (${item.color}, Talla ${item.size})`).join('\n');
-      const text = `Hola Black Team, acabo de registrar un pedido en la web.\n\n*ID de Pedido:* ${orderId}\n*Cliente:* ${customerData.name}\n*Teléfono:* ${customerData.phone}\n*Dirección:* ${customerData.address}\n\n*Prendas:* \n${itemsText}\n\nQuedo a la espera de la confirmación. ¡Muchas gracias!`;
+      const totalAmount = cart.reduce((sum, item) => sum + item.price, 0);
+      const text = `Hola Black Team, acabo de registrar un pedido en la web.\n\n*ID de Pedido:* ${orderId}\n*Cliente:* ${customerData.name}\n*Teléfono:* ${customerData.phone}\n*Dirección:* ${customerData.address}\n\n*Prendas:* \n${itemsText}\n\n*Total del pedido:* $${totalAmount} MXN\n\nQuedo a la espera de la confirmación. ¡Muchas gracias!`;
       return `https://wa.me/${SELLER_WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
     };
 
