@@ -2,21 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { X, Play, ShieldAlert, Award } from 'lucide-react';
 
 const colors = [
-  { name: "Cyber Black", hex: "#121212" },
-  { name: "Pure White", hex: "#f8fafc" }
+  { name: "Negro", hex: "#121212" },
+  { name: "Blanco", hex: "#f8fafc" }
 ];
 
 const sizes = ["S", "M", "L", "XL"];
 
 // Mockup assets mapping
 const mockupAssets = {
-  "Cyber Black": {
+  "Negro": {
     front: "assets/black_shirt_front.png",
     back: "assets/black_shirt_back.png",
     right: "assets/black_shirt_right.png",
     filter: "none"
   },
-  "Pure White": {
+  "Blanco": {
     front: "assets/white_shirt_front.png",
     back: "assets/white_shirt_front.png",
     right: "assets/white_shirt_right.png",
@@ -45,73 +45,73 @@ export default function ProductModal({ product, onClose, onAddToCart }) {
   // Sync color changes if necessary
   const activeMockup = product.id === 'playera_asimetrica_m'
     ? {
-        "Cyber Black": { front: "assets/black_asym_front.png", filter: "none" },
-        "Pure White": { front: "assets/white_asym_front.png", filter: "none" }
+        "Negro": { front: "assets/black_asym_front.png", filter: "none" },
+        "Blanco": { front: "assets/white_asym_front.png", filter: "none" }
       }[selectedColor.name]
     : product.id === 'playera_asimetrica_corta_m'
     ? {
-        "Cyber Black": { front: "assets/black_asym_short_front.png", filter: "none" },
-        "Pure White": { front: "assets/white_asym_short_front.png", filter: "none" }
+        "Negro": { front: "assets/black_asym_short_front.png", filter: "none" },
+        "Blanco": { front: "assets/white_asym_short_front.png", filter: "none" }
       }[selectedColor.name]
     : product.id === 'playera_manga_corta_m'
     ? {
-        "Cyber Black": { front: "assets/black_short_front.png", filter: "none" },
-        "Pure White": { front: "assets/white_short_front.png", filter: "none" }
+        "Negro": { front: "assets/black_short_front.png", filter: "none" },
+        "Blanco": { front: "assets/white_short_front.png", filter: "none" }
       }[selectedColor.name]
     : product.id === 'playera_sin_manga_m'
     ? {
-        "Cyber Black": { front: "assets/black_tank_front.png", filter: "none" },
-        "Pure White": { front: "assets/white_tank_front.png", filter: "none" }
+        "Negro": { front: "assets/black_tank_front.png", filter: "none" },
+        "Blanco": { front: "assets/white_tank_front.png", filter: "none" }
       }[selectedColor.name]
     : product.id === 'licra_compresion_m'
     ? {
-        "Cyber Black": { front: "assets/black_tights_front.png", filter: "none" },
-        "Pure White": { front: "assets/white_tights_front.png", filter: "none" }
+        "Negro": { front: "assets/black_tights_front.png", filter: "none" },
+        "Blanco": { front: "assets/white_tights_front.png", filter: "none" }
       }[selectedColor.name]
     : product.id === 'licra_asimetrica_m'
     ? {
-        "Cyber Black": { front: "assets/black_asym_tights_front.png", filter: "none" },
-        "Pure White": { front: "assets/white_asym_tights_front.png", filter: "none" }
+        "Negro": { front: "assets/black_asym_tights_front.png", filter: "none" },
+        "Blanco": { front: "assets/white_asym_tights_front.png", filter: "none" }
       }[selectedColor.name]
     : product.id === 'shorts_compresion_m'
     ? {
-        "Cyber Black": { front: "assets/black_shorts_front.png", filter: "none" },
-        "Pure White": { front: "assets/white_shorts_front.png", filter: "none" }
+        "Negro": { front: "assets/black_shorts_front.png", filter: "none" },
+        "Blanco": { front: "assets/white_shorts_front.png", filter: "none" }
       }[selectedColor.name]
     : product.id === 'playera_manga_larga_f'
     ? {
-        "Cyber Black": { front: "assets/black_female_shirt_front.png", filter: "none" },
-        "Pure White": { front: "assets/white_female_shirt_front.png", filter: "none" }
+        "Negro": { front: "assets/black_female_shirt_front.png", filter: "none" },
+        "Blanco": { front: "assets/white_female_shirt_front.png", filter: "none" }
       }[selectedColor.name]
     : product.id === 'playera_asimetrica_f'
     ? {
-        "Cyber Black": { front: "assets/black_female_asym_front.png", filter: "none" },
-        "Pure White": { front: "assets/white_female_asym_front.png", filter: "none" }
+        "Negro": { front: "assets/black_female_asym_front.png", filter: "none" },
+        "Blanco": { front: "assets/white_female_asym_front.png", filter: "none" }
       }[selectedColor.name]
     : product.id === 'playera_manga_corta_f'
     ? {
-        "Cyber Black": { front: "assets/black_female_short_front.png", filter: "none" },
-        "Pure White": { front: "assets/white_female_short_front.png", filter: "none" }
+        "Negro": { front: "assets/black_female_short_front.png", filter: "none" },
+        "Blanco": { front: "assets/white_female_short_front.png", filter: "none" }
       }[selectedColor.name]
     : product.id === 'playera_asimetrica_corta_f'
     ? {
-        "Cyber Black": { front: "assets/black_female_asym_short_front.png", filter: "none" },
-        "Pure White": { front: "assets/white_female_asym_short_front.png", filter: "none" }
+        "Negro": { front: "assets/black_female_asym_short_front.png", filter: "none" },
+        "Blanco": { front: "assets/white_female_asym_short_front.png", filter: "none" }
       }[selectedColor.name]
     : product.id === 'licra_compresion_f'
     ? {
-        "Cyber Black": { front: "assets/black_female_tights_front.png", filter: "none" },
-        "Pure White": { front: "assets/white_female_tights_front.png", filter: "none" }
+        "Negro": { front: "assets/black_female_tights_front.png", filter: "none" },
+        "Blanco": { front: "assets/white_female_tights_front.png", filter: "none" }
       }[selectedColor.name]
     : product.id === 'licra_asimetrica_f'
     ? {
-        "Cyber Black": { front: "assets/black_female_asym_tights_front.png", filter: "none" },
-        "Pure White": { front: "assets/white_female_asym_tights_front.png", filter: "none" }
+        "Negro": { front: "assets/black_female_asym_tights_front.png", filter: "none" },
+        "Blanco": { front: "assets/white_female_asym_tights_front.png", filter: "none" }
       }[selectedColor.name]
     : product.id === 'shorts_compresion_f'
     ? {
-        "Cyber Black": { front: "assets/black_female_shorts_front.png", filter: "none" },
-        "Pure White": { front: "assets/white_female_shorts_front.png", filter: "none" }
+        "Negro": { front: "assets/black_female_shorts_front.png", filter: "none" },
+        "Blanco": { front: "assets/white_female_shorts_front.png", filter: "none" }
       }[selectedColor.name]
     : mockupAssets[selectedColor.name];
 

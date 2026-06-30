@@ -50,7 +50,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onRemoveItem, onChec
   };
 
   const getThumbnail = (id, color, gender) => {
-    const isWhite = color === 'Pure White';
+    const isWhite = color === 'Blanco';
     if (id === 'playera_asimetrica_m') {
       return isWhite ? 'assets/white_asym_front.png' : 'assets/black_asym_front.png';
     }
