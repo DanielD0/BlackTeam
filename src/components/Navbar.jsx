@@ -14,29 +14,7 @@ export default function Navbar({ activeTab, setActiveTab, isDarkMode, toggleThem
         />
       </div>
 
-      {/* Nav Menu */}
-      <nav className="flex gap-4 sm:gap-6 md:gap-10">
-        <button
-          onClick={() => setActiveTab('home')}
-          className={`font-semibold text-xs sm:text-sm tracking-wider transition-all cursor-pointer ${
-            activeTab === 'home'
-              ? 'text-black dark:text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.4)] dark:drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]'
-              : 'text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white'
-          }`}
-        >
-          HOME
-        </button>
-        <button
-          onClick={() => setActiveTab('collections')}
-          className={`font-semibold text-xs sm:text-sm tracking-wider transition-all cursor-pointer ${
-            activeTab === 'collections' || activeTab === 'blackskin'
-              ? 'text-black dark:text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.4)] dark:drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]'
-              : 'text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white'
-          }`}
-        >
-          COLECCIONES
-        </button>
-      </nav>
+
 
       {/* Action Buttons */}
       <div className="flex items-center gap-2 sm:gap-4 md:gap-6">

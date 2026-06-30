@@ -26,23 +26,17 @@ export default function Hero({ setActiveTab }) {
         </div>
 
         <p className="text-slate-600 dark:text-slate-400 max-w-2xl text-base md:text-xl font-light leading-relaxed">
-          Diseñado para atletas de alto rendimiento. Nuestra tecnología de fibras inteligentes bio-elásticas se adapta a tu cuerpo como una segunda piel, mejorando la circulación y acelerando la recuperación muscular.
+          Diseñado por atletas de alto rendimiento para atletas de alto rendimiento.
         </p>
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
           <button
-            onClick={() => setActiveTab('blackskin')}
+            onClick={() => setActiveTab('collections')}
             className="px-8 py-4 bg-black dark:bg-white hover:bg-neutral-800 dark:hover:bg-neutral-200 text-white dark:text-black font-bold tracking-wider rounded-lg shadow-[0_4px_25px_rgba(0,0,0,0.15)] dark:shadow-[0_4px_25px_rgba(255,255,255,0.15)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
-            DESCUBRIR BLACKSKIN
+            VER COLECCIONES
             <ArrowRight size={18} />
-          </button>
-          <button
-            onClick={() => setActiveTab('collections')}
-            className="px-8 py-4 bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-850 text-slate-800 dark:text-slate-200 border border-slate-350 dark:border-slate-700/60 hover:border-slate-500 font-semibold tracking-wider rounded-lg transition-all cursor-pointer"
-          >
-            VER CATÁLOGO GENERAL
           </button>
         </div>
 
