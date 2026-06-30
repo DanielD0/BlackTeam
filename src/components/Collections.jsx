@@ -5,119 +5,120 @@ import ProductCard from './ProductCard';
 const blackSkinProducts = [
   {
     id: "licra_compresion_m",
-    name: "Licra Compresión BlackSkin Elite (H)",
-    price: 49.99,
+    name: "Licra Completa",
+    price: 280,
     gender: "Hombre",
     description: "Fibra de compresión de alta elasticidad con absorción de humedad optimizada y costuras flatlock anti-roce.",
     specs: ["Compresión: 25 mmHg", "Fibra: 85% Poliéster, 15% Elastano", "Corte: Ergonómico deportivo"]
   },
   {
     id: "playera_manga_larga_m",
-    name: "Playera Manga Larga BlackSkin (H)",
-    price: 39.99,
+    name: "Body Manga Larga",
+    price: 250,
     gender: "Hombre",
     description: "Playera de compresión de manga larga ultra-ajustada diseñada para potenciar la oxigenación muscular y el rendimiento deportivo.",
     specs: ["Diseño: Manga larga ergonómico", "Fibra: 85% Poliamida, 15% Elastano", "Compresión: 22 mmHg"]
   },
   {
     id: "shorts_compresion_m",
-    name: "Shorts Compresión BlackSkin (H)",
-    price: 29.99,
+    name: "Licra Corta",
+    price: 180,
     gender: "Hombre",
     description: "Shorts de compresión (half tights) para entrenamientos de alto rendimiento. Soporte muscular focalizado que reduce la fatiga en cuádriceps y femorales.",
     specs: ["Compresión: 20 mmHg", "Fibra: 85% Poliéster, 15% Elastano", "Largo: Medio muslo (Half Tights)"]
   },
   {
     id: "licra_asimetrica_m",
-    name: "Licra Asimétrica BlackSkin Elite (H)",
-    price: 49.99,
+    name: "Licra Completa Una Sola Pierna",
+    price: 260,
     gender: "Hombre",
     description: "Licra de compresión de alto rendimiento con diseño asimétrico: una pierna larga hasta el tobillo y la otra corta hasta el muslo. Soporte muscular localizado para atletas de alto nivel.",
     specs: ["Diseño: Asimétrico (Pierna larga y corta)", "Fibra: 85% Poliamida, 15% Elastano", "Compresión: 25 mmHg"]
   },
   {
     id: "playera_asimetrica_m",
-    name: "Playera Asimétrica BlackSkin (H)",
-    price: 44.99,
+    name: "Body Solo Una Manga Larga",
+    price: 250,
     gender: "Hombre",
     description: "Playera de compresión con diseño asimétrico de manga larga en un brazo y sin manga en el otro. Soporte muscular focalizado y máxima movilidad.",
     specs: ["Diseño: Asimétrico de alto rendimiento", "Fibra: 88% Poliamida, 12% Elastano", "Compresión: 22 mmHg"]
   },
   {
     id: "playera_asimetrica_corta_m",
-    name: "Playera Asimétrica Manga Corta BlackSkin (H)",
-    price: 39.99,
+    name: "Body Una Sola Manga Corta",
+    price: 220,
     gender: "Hombre",
     description: "Playera de compresión con diseño asimétrico: manga corta en el brazo izquierdo y sin manga en el derecho. Soporte muscular ergonómico y movilidad optimizada.",
     specs: ["Diseño: Asimétrico (Manga corta y sin manga)", "Fibra: 87% Poliamida, 13% Elastano", "Compresión: 22 mmHg"]
-  }, {
+  }, 
+  {
     id: "playera_manga_corta_m",
-    name: "Playera Manga Corta BlackSkin (H)",
-    price: 34.99,
+    name: "Body Manga Corta",
+    price: 220,
     gender: "Hombre",
     description: "Playera de compresión manga corta de alto rendimiento. Fibras elásticas ultra transpirables para entrenamientos de alta intensidad.",
     specs: ["Diseño: Manga corta ergonómico", "Fibra: 85% Poliamida, 15% Elastano", "Compresión: 20 mmHg"]
   },
   {
     id: "playera_sin_manga_m",
-    name: "Playera Sin Manga BlackSkin (H)",
-    price: 29.99,
+    name: "Body Sin Mangas",
+    price: 200,
     gender: "Hombre",
     description: "Playera de compresión sin mangas de alto rendimiento. Diseñada para ofrecer máxima libertad de movimiento y óptima regulación de temperatura.",
     specs: ["Diseño: Sin mangas ergonómico", "Fibra: 85% Poliamida, 15% Elastano", "Compresión: 18 mmHg"]
   },
   {
     id: "playera_manga_larga_f",
-    name: "Playera Manga Larga BlackSkin (M)",
-    price: 39.99,
+    name: "Body Manga Larga",
+    price: 250,
     gender: "Mujer",
     description: "Playera de compresión de manga larga para mujer. Diseñada con un ajuste ergonómico que moldea y brinda soporte muscular óptimo durante entrenamientos intensos.",
     specs: ["Diseño: Manga larga ergonómico", "Fibra: 85% Poliamida, 15% Elastano", "Compresión: 20 mmHg"]
   },
   {
     id: "playera_asimetrica_f",
-    name: "Playera Asimétrica BlackSkin (M)",
-    price: 44.99,
+    name: "Body Solo Una Manga Larga",
+    price: 250,
     gender: "Mujer",
     description: "Playera de compresión para mujer con diseño asimétrico: manga larga en un brazo y sin manga en el otro. Ofrece un soporte muscular diferencial y una estética innovadora y dinámica.",
     specs: ["Diseño: Asimétrico de alto rendimiento", "Fibra: 85% Poliamida, 15% Elastano", "Compresión: 20 mmHg"]
   },
   {
     id: "playera_manga_corta_f",
-    name: "Playera Manga Corta BlackSkin (M)",
-    price: 34.99,
+    name: "Body Manga Corta",
+    price: 220,
     gender: "Mujer",
     description: "Playera de compresión de manga corta para mujer. Estructura ligera y transpirable que brinda máxima libertad y un ajuste estilizado segunda piel.",
     specs: ["Diseño: Manga corta ergonómico", "Fibra: 85% Poliamida, 15% Elastano", "Compresión: 18 mmHg"]
   },
   {
     id: "playera_asimetrica_corta_f",
-    name: "Playera Asimétrica Manga Corta BlackSkin (M)",
-    price: 39.99,
+    name: "Body Una Sola Manga Corta",
+    price: 220,
     gender: "Mujer",
     description: "Playera de compresión para mujer con diseño asimétrico: manga corta en el brazo izquierdo y sin manga en el derecho. Estilo vanguardista con soporte muscular óptimo.",
     specs: ["Diseño: Asimétrico (Manga corta y sin manga)", "Fibra: 85% Poliamida, 15% Elastano", "Compresión: 20 mmHg"]
   },
   {
     id: "licra_compresion_f",
-    name: "Licra Compresión BlackSkin Elite (M)",
-    price: 49.99,
+    name: "Licra Completa",
+    price: 280,
     gender: "Mujer",
     description: "Licra de compresión de alta elasticidad para mujer. Diseñada con un corte ergonómico que ofrece refuerzo abdominal y soporte lumbar activo durante tus rutinas.",
     specs: ["Compresión: 25 mmHg", "Fibra: 80% Poliamida, 20% Elastano", "Corte: Ergonómico con soporte lumbar"]
   },
   {
     id: "licra_asimetrica_f",
-    name: "Licra Asimétrica BlackSkin Elite (M)",
-    price: 49.99,
+    name: "Licra Completa Una Sola Pierna",
+    price: 260,
     gender: "Mujer",
     description: "Licra de compresión para mujer con diseño asimétrico: una pierna larga y la otra corta. Proporciona soporte muscular focalizado y máxima comodidad en cada entrenamiento.",
     specs: ["Diseño: Asimétrico (Pierna larga y corta)", "Fibra: 80% Poliamida, 20% Elastano", "Compresión: 25 mmHg"]
   },
   {
     id: "shorts_compresion_f",
-    name: "Shorts Compresión BlackSkin (M)",
-    price: 29.99,
+    name: "Licra Corta",
+    price: 180,
     gender: "Mujer",
     description: "Shorts de compresión para mujer diseñados para entrenamientos de alto rendimiento. Ofrecen soporte en cuádriceps y un ajuste moldeador cómodo.",
     specs: ["Compresión: 20 mmHg", "Fibra: 85% Poliéster, 15% Elastano", "Largo: Corto deportivo (Half Tights)"]
